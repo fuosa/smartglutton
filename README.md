@@ -11,60 +11,90 @@
 | first_name         | string  | null: false               |
 | last_name_kana     | string  | null: false               |
 | data_of_birth      | string  | null: false               |
+| post_code          | string  | null: false               |
+| prefecture_id      | integer | null: false               |
+| city               | string  | null: false               |
+| house_number       | string  | null: false               |
+| building_name      | string  |                           |
+| phone              | string  | null: false               |
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
-| date_of_birth      | date    | null: false               |
 
 ### Association
-has_many: 
-has_many: 
+has_many: orders
+has_many: cart_items
 
-## purchase_records テーブル
 
-| column           | Type      | Options           |
-| ---------------- | --------- | ----------------- |
+## orders テーブル
+
+| column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| bill             | integer    | null: false                    |
+| payment_type     | integer    | null: false                    |
+| receive_type     | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
 | item             | references | null: false, foreign_key: true |
 
 ### Association
-has_one: address
+has_many: ordered_items
 belongs_to: user
-belongs_to: item
 
 
-## addresses テーブル
+## ordered_items テーブル
 
-| column           | Type    | Options           |
-| ---------------- | ------- | ----------------- |
-| post_code        | string  | null: false       |
-| prefecture_id    | integer | null: false       |
-| city             | string  | null: false       |
-| house_number     | string  | null: false       |
-| building_name    | string  |                   |
-| phone            | string  | null: false       |
-| purchase_record  | references | null: false, foreign_key: true |
+| column       | Type       | Options                        |
+| ------------ | ---------- | ------------------------------ |
+| item         | references | null: false, foreign_key: true |
+| order        | references | null: false, foreign_key: true |
+| item_qty     | integer    | null: false                    |
+| price        | integer    | null: false                    |
+| item_status  | integer    | null: false                    |
 
 ### Association
-belongs_to: purchase_record
+belongs_to: orders
+belongs_to: items
+
+
+
+## cart_items テーブル
+
+| column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| item      | references | null: false, foreign_key: true |
+| user      | references | null: false, foreign_key: true |
+| item_qty  | integer    | null: false                    |
+
+### Association
+belongs_to: users
+belongs_to: items
 
 
 
 ## items テーブル
 
-| column           | Type    | Options           |
-| ---------------- | ------- | ----------------- |
-| item_name        | string  | null: false       |
-| description      | text    | null: false       |
-| price            | integer | null: false       |
-| category_id      | integer | null: false       |
-| condition_id     | integer | null: false       |
-| delivery_fee_id  | integer | null: false       |
-| prefecture_id    | integer | null: false       |
-| shipping_day_id  | integer | null: false       |
-| user             | references | null: false, foreign_key: true |
+| column        |  Type      | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| item_name     | string     | null: false                    |
+| description   | text       | null: false                    |
+| price         | integer    | null: false                    |
+| user          | references | null: false, foreign_key: true |
+| genre         | references | null: false, foreign_key: true |
 
 ### Association
-belongs_to: user
-has_one: purchase_record
+has_many: cart_items
+has_many: ordered_items
+belongs_to: genres
+
+
+## genres テーブル
+
+| column         | Type       | Options     |
+| -------------- | ---------- | ----------- |
+| genre_name     | integer    | null: false |
+| genre_status   | integer    | null: false |
+
+### Association
+has_many: items
+
 =======
-## users テーブル
+

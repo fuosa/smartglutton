@@ -10,12 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_02_151641) do
-
-  create_table "items", charset: "utf8", force: :cascade do |t|
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
+ActiveRecord::Schema.define(version: 2021_06_03_054204) do
 
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,12 +21,6 @@ ActiveRecord::Schema.define(version: 2021_06_02_151641) do
     t.string "last_name_kana", null: false
     t.string "first_name_kana", null: false
     t.date "date_of_birth", null: false
-    t.string "post_code", null: false
-    t.integer "prefecture_id", null: false
-    t.string "city", null: false
-    t.string "house_number", null: false
-    t.string "building_name"
-    t.string "phone", null: false
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

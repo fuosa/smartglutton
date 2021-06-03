@@ -11,6 +11,45 @@
   </head>
 
   <body>
+    <header class="grovalNavigation">
+    　<h1>
+       <a href="/">SmartGlutton</a>
+      </h1>
+      <%# <h2>
+       <p>SmartGlutton</p>
+       </h2> %>
+      <% if user_signed_in? %>
+      <nav class="navi-menu">
+       <ul>
+                  
+         <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            <%= link_to "hoge", new_user_session_path, class: "post" %>
+          </div>
+        <% else %>
+          <div class="grid-6">
+            <%= link_to "ログイン", new_user_session_path, class: "post" %>
+            <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+          </div>
+        <% end %>
+        <%# <li><a href='#'>HOME</a></li>
+        <li><a href='#'>LOGIN</a></li>
+        <li><a href='#'>SIGN UP</a></li>
+        <li><a href='#'>CART</a></li> %>
+       </ul>
+      </nav>　
+    </header>
+    <main>
+        <div class="localNavigation">
+            <p>カテゴリ</p>
+        </div>
+        <div class="content">
+            <p>SmartGluttonはフードロス削減を目的とした、フードシェアサービスです。</p>
+            <p>コンテンツ</p>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>フッター</p>
+    </footer>
     <%= yield %>
   </body>
 </html>

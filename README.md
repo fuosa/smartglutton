@@ -12,12 +12,6 @@
 | last_name_kana     | string  | null: false               |
 | first_name_kana    | string  | null: false               |
 | data_of_birth      | data    | null: false               |
-| post_code          | string  | null: false               |
-| prefecture_id      | integer | null: false               |
-| city               | string  | null: false               |
-| house_number       | string  | null: false               |
-| building_name      | string  |                           |
-| phone              | string  | null: false               |
 | email              | string  | null: false, unique: true |
 | encrypted_password | string  | null: false               |
 
@@ -33,6 +27,7 @@ has_many: cart_items
 | bill             | integer    | null: false                    |
 | payment_type     | integer    | null: false                    |
 | receive_type     | integer    | null: false                    |
+| phone            | string     | null: false                    |
 | user             | references | null: false, foreign_key: true |
 | item             | references | null: false, foreign_key: true |
 

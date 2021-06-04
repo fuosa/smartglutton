@@ -3,7 +3,8 @@ class ItemsController < ApplicationController
   def index
   end
 
-  def edit
+  def new
   end
+
 
 end

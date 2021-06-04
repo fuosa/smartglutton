@@ -79,15 +79,15 @@ belongs_to: items
 ### Association
 has_many: cart_items
 has_many: ordered_items
-belongs_to: genres
+belongs_to: categories
 
 
-## genres テーブル
+## categories テーブル
 
-| column         | Type       | Options     |
-| -------------- | ---------- | ----------- |
-| genre_name     | integer    | null: false |
-| genre_status   | integer    | null: false |
+| column            | Type       | Options     |
+| ----------------- | ---------- | ----------- |
+| category_name     | integer    | null: false |
+| category_status   | integer    | null: false |
 
 ### Association
 has_many: items

@@ -14,4 +14,7 @@
  *= require_self
  */
 
+ * {
+   box-sizing: border-box;
+ }
  

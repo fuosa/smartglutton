@@ -5,7 +5,7 @@
 
         <%# 「モデル名」にはUserモデルであれば@userを渡しましょう。%>
         <%# 「新規登録機能へのパス」は、devise導入後にrails routesを実行してdevise/registrations#createへのパスを確認し、記載してください。 %>
-        <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+        <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
 
         <div class="field">
           <%= f.label :email, "メールアドレス" %><br />
@@ -33,8 +33,8 @@
         </div>
 
         <div class="field">
-          <%= f.label :last_name, "名" %><br />
-          <%= f.text_field :last_name, id:"user_last_name" %>
+          <%= f.label :first_name, "名" %><br />
+          <%= f.text_field :first_name, id:"user_last_name" %>
         </div>
 
         <div class="field">
@@ -48,9 +48,13 @@
         </div>
 
         <div class="field">
-          <%= f.label :data_of_birth, "生年月日" %><br />
-          <%= f.text_field :data_of_birth, id:"user_data_of_birth" %>
+          <%= f.label :date_of_birth, "生年月日" %><br />
+          <%= f.date_select :date_of_birth, id:"user_date_of_birth", se_month_numbers: true,start_year: 1930, end_year: (Time.now.year - 10), default: Date.new(1989, 1, 1) %>
         </div>
+
+        <%# = f.date_select :birth_date, u %>
+
+
 
         <div class="actions">
           <%= f.submit "新規登録", class: :form__btn  %>

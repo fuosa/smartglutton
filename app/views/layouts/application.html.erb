@@ -1,49 +1,46 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Smartglutton</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SmartGlutton</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700,900&display=swap" rel="stylesheet">
   </head>
 
   <body>
-    <header class="grovalNavigation">
-    　<h1>
-       <a href="/">SmartGlutton</a>
-      </h1>
-      <%# <h2>
-       <p>SmartGlutton</p>
-       </h2> %>
-      <% if user_signed_in? %>
-      <nav class="navi-menu">
-       <ul>
-          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
-          <li><%= link_to "アカウント", new_user_session_path, class: "post" %></li>
-          <li><%= link_to "カート", '#', class: "#" %></li>
-        <% else %>
-          <li><%= link_to "HOME", '#', class: "#" %></li>
-          <li><%= link_to "ログイン", new_user_session_path, class: "post" %></li>
-          <li><%= link_to "新規登録", new_user_registration_path, class: "post" %></li>
-        <% end %>
-       </ul>
-      </nav>　
+    <header class="header">
+      <div class="inner">
+        <div class="nav">
+        <title>SmartGlutton</title>
+          <div class="nav__left">
+            <%= link_to image_tag("logo.png", class: :logo), root_path %>
+          </div>
+          <%# ログインしているときは以下を表示するようにしましょう %>
+            <%# <div class="nav__right"> %>
+              <%# <%= link_to "ログアウト", root_path, class: :nav__logout %>
+              <%# <%= link_to "New Proto", root_path, class: :nav__btn %>
+            <%# </div> %>
+          <%# // ログインしているときは上記を表示するようにしましょう %>
+          <%# ログインしていないときは以下を表示するようにしましょう %>
+            <div class="nav__right">
+              <%= link_to "ログイン", root_path, class: :nav__btn %>
+              <%= link_to "新規登録", root_path, class: :nav__btn %>
+            </div>
+          <%# // ログインしていないときは上記を表示するようにしましょう %>
+        </div>
+      </div>
     </header>
-    <main>
-        <div class="localNavigation">
-            <p>カテゴリ</p>
-        </div>
-        <div class="content">
-            <p>SmartGluttonはフードロス削減を目的とした、フードシェアサービスです。</p>
-            <p>コンテンツ</p>
-        </div>
-    </main>
-    <footer class="footer">
-        <p>フッター</p>
-    </footer>
     <%= yield %>
+    <footer class="footer">
+      <p class="copyright">Copyright © SmartGlutton All rights reserved.</p>
+        <div class="footer__right">
+          <%= link_to image_tag("sdg_icon_02_reversal_ja.png", class: :logo2), root_path %>
+          <%= link_to image_tag("sdg_icon_12_reversal_ja-290x290.png", class: :logo2), root_path %>
+        </div>
+    </footer>
   </body>
 </html>

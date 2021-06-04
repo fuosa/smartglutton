@@ -42,6 +42,7 @@ a {
   padding: 20px 0;
 
 }
+
 .inner {
   width: 1024px;
   margin: 0 auto;
@@ -55,9 +56,6 @@ a {
   width: 200px;
 }
 
-.logo2 {
-  width: 75px;
-}
 .nav__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
@@ -285,6 +283,10 @@ a {
 .footer__right {
   text-align: right;
   font-size: 10px;
+}
+
+.logo2 {
+  width: 75px;
 }
 
 

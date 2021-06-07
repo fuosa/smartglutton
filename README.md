@@ -18,6 +18,7 @@
 ### Association
 has_many: orders
 has_many: cart_items
+has_many: items
 
 
 ## orders テーブル
@@ -68,29 +69,21 @@ belongs_to: items
 
 ## items テーブル
 
-| column        |  Type      | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| item_name     | string     | null: false                    |
-| description   | text       | null: false                    |
-| price         | integer    | null: false                    |
-| user          | references | null: false, foreign_key: true |
-| genre         | references | null: false, foreign_key: true |
+| column            |  Type      | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| item_name         | string     | null: false                    |
+| description       | text       | null: false                    |
+| price             | integer    | null: false                    |
+| user              | references | null: false, foreign_key: true |
+| category_name     | integer    | null: false                    |
+| category_status   | integer    | null: false                    |
 
 ### Association
 has_many: cart_items
 has_many: ordered_items
-belongs_to: categories
+belongs_to: user
 
 
-## categories テーブル
-
-| column            | Type       | Options     |
-| ----------------- | ---------- | ----------- |
-| category_name     | integer    | null: false |
-| category_status   | integer    | null: false |
-
-### Association
-has_many: items
 
 =======
 

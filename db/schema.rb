@@ -40,29 +40,15 @@ ActiveRecord::Schema.define(version: 2021_06_07_065832) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "categories", charset: "utf8", force: :cascade do |t|
-    t.integer "category_name", null: false
-    t.integer "category_status", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "genres", charset: "utf8", force: :cascade do |t|
-    t.integer "genre_name", null: false
-    t.integer "genre_status", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "items", charset: "utf8", force: :cascade do |t|
     t.string "item_name", null: false
     t.text "description", null: false
     t.integer "price", null: false
+    t.integer "category_name", null: false
+    t.integer "category_status", null: false
     t.bigint "user_id", null: false
-    t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["category_id"], name: "index_items_on_category_id"
     t.index ["user_id"], name: "index_items_on_user_id"
   end
 
@@ -86,6 +72,5 @@ ActiveRecord::Schema.define(version: 2021_06_07_065832) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
-  add_foreign_key "items", "categories"
   add_foreign_key "items", "users"
 end

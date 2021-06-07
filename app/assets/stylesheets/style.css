@@ -37,12 +37,18 @@ a {
 /* ヘッダー */
 
 .header {
-  background-color: #f1f8fe;
+  /* background-color: #f1f8fe; */
   margin-bottom: 48px;
   padding: 20px 0;
-  background: url(italian-cuisine-2378729_1920.jpg)
-
-}
+  background: url(italian-cuisine-2378729_1920.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  
+  }
 
 .inner {
   width: 1024px;
@@ -274,6 +280,11 @@ a {
 .footer {
   background-color: #999999;
   padding: 10px 0;
+  background: url(italian-cuisine-2378729_1920.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .copyright {
   text-align: center;

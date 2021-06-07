@@ -17,13 +17,13 @@
         <div class="nav">
         <title>SmartGlutton</title>
           <div class="nav__left">
-            <%= link_to image_tag("E_SDG_logo_without_UN_emblem_horizontal_Transparent_WEB.png", class: :logo), root_path %>
+            <%= link_to "SMARTGLUTTON", root_path, class: :logo %>
           </div>
           <%# ログインしているときは以下を表示するようにしましょう %>
            <% if user_signed_in? %>
              <div class="nav__right">
                <%= link_to "ログアウト", root_path, class: :nav__logout %>
-               <%= link_to "New Proto", root_path, class: :nav__btn %>
+               <%= link_to "商品出品", root_path, class: :nav__btn %>
              </div>
           <%# // ログインしているときは上記を表示するようにしましょう %>
           <%# ログインしていないときは以下を表示するようにしましょう %>
@@ -41,9 +41,7 @@
     <footer class="footer">
       <p class="copyright">Copyright © SmartGlutton All rights reserved.</p>
         <div class="footer__right">
-          <%= link_to image_tag("SDG Wheel_Transparent_WEB.png", class: :logo2), root_path %>
-          <%= link_to image_tag("sdg_icon_02_reversal_ja.png", class: :logo2), root_path %>
-          <%= link_to image_tag("sdg_icon_12_reversal_ja-290x290.png", class: :logo2), root_path %>
+          <%= link_to image_tag("E_SDG_logo_without_UN_emblem_horizontal_Transparent_WEB.png", class: :logo), root_path %>
         </div>
     </footer>
   </body>

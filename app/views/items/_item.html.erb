@@ -1,8 +1,8 @@
 <div class="card">
 
-  <%= link_to image_tag(item.image, class: :card__img), items_path(item.id) %>
+  <%= link_to image_tag(item.image, class: :card__img), item_path(item.id) %>
   <div class="card__body">
-    <%= link_to item.item_name, items_path(item.id), class: :card__title %>
+    <%= link_to item.item_name, item_path(item.id), class: :card__title %>
     <p class="card__summary">
       <%= item.price %>円 　✖︎　１個<br>
       <%= item.description %>

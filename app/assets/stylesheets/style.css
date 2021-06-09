@@ -27,6 +27,7 @@ li {
 img {
   max-width: 100%;
   vertical-align: bottom;
+
 }
 
 a {
@@ -38,8 +39,8 @@ a {
 
 .header {
   /* background-color: #f1f8fe; */
-  margin-bottom: 48px;
-  padding: 20px 0;
+  margin-bottom: 50px;
+  padding: 30px 0;
   background: url(italian-cuisine-2378729_1920.jpg);
   background-size: cover;
   background-position: center center;
@@ -60,13 +61,14 @@ a {
   justify-content: space-between;
 }
 .logo {
-  width: 200px;
+  width: 250px;
+  font-size: 30px;
 }
 
 .nav__btn{
   display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  padding: 1.2em 2.5em;
+  font-size: 1em;
   color: #87CEFA;
   text-decoration: none;
   user-select: none;
@@ -152,6 +154,14 @@ a {
 }
 .card__img {
   margin-bottom: 16px;
+  border: 1px solid;
+  border-radius: 8px;
+  display: block;
+  object-fit: cover;
+  height: 350px;
+  width: 250%;
+
+  
 }
 .card__title {
   display: block;

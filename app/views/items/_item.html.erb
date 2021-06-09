@@ -4,7 +4,7 @@
   <div class="card__body">
     <%= link_to item.item_name, item_path(item.id), class: :card__title %>
     <p class="card__summary">
-      <%= item.price %>円 　✖︎　１個<br>
+      <%= item.price %>円 <br>
       <%= item.description %>
     </p>
     <%= link_to item.user.nickname, user_path(item.user), class: :card__user %>

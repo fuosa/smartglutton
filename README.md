@@ -40,8 +40,6 @@
 ・店舗のマップ表示機能
 
 
-=======
-
 
 # テーブル設計
 
@@ -62,6 +60,7 @@
 has_many: orders
 has_many: cart_items
 has_many: items
+has_many: comments
 
 
 ## orders テーブル
@@ -78,6 +77,7 @@ has_many: items
 ### Association
 has_many: ordered_items
 belongs_to: user
+
 
 
 ## ordered_items テーブル
@@ -124,10 +124,18 @@ belongs_to: items
 ### Association
 has_many: cart_items
 has_many: ordered_items
+has_many: comments
 belongs_to: user
 
 
 
 
+## comments テーブル
+| column            |  Type      | Options                        |
+| ----------------- | ---------- | ------------------------------ |
+| item              | references | null: false, foreign_key: true |
+| user              | references | null: false, foreign_key: true |
 
-
+### Association
+belongs_to: item
+belongs_to: user

@@ -27,6 +27,7 @@ li {
 img {
   max-width: 100%;
   vertical-align: bottom;
+  overflow: auto;
 
 }
 
@@ -39,15 +40,14 @@ a {
 
 .header {
   /* background-color: #f1f8fe; */
-  margin-bottom: 50px;
-  padding: 30px 0;
-  background: url(italian-cuisine-2378729_1920.jpg);
+  margin-bottom: 45px;
+  padding: 20px 0;
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  background-color: #464646;
+  background-color: ivory;
 
   }
 
@@ -69,28 +69,43 @@ a {
   display: inline-block;
   padding: 1.2em 2.5em;
   font-size: 1em;
-  color: #87CEFA;
+  color: #000;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #000 solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   color: #fff;
-  background: #87CEFA;
+  background: #000;
 }
 
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #87CEFA;
+  font-size: 1em;
+  color: #000;
   text-decoration: none;
   user-select: none;
 }
 .nav__logout:hover{
   opacity: 0.5;
+}
+
+.nav__right{
+  display: flex;
+  /* justify-content: space-around; 左右中央揃え */
+  align-items: center; 
+  gap: 10px;
+}
+
+.cart__logo{
+  width: 89px;
+  height: auto;
+  text-align: justify;
+  padding: 0px 0px 0px 30px;
+  
 }
 
 /* フォーム周り */
@@ -156,7 +171,7 @@ a {
   margin-bottom: 16px;
   border: 1px solid;
   border-radius: 8px;
-  display: block;
+  /* display: block; */
   object-fit: cover;
   height: 350px;
   width: 250%;

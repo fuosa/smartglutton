@@ -17,14 +17,19 @@
         <div class="nav">
         <title>SmartGlutton</title>
           <div class="nav__left">
-            <%= link_to "SMARTGLUTTON", root_path, class: :logo %><br>
-            <a> SmartGluttonはフードロスを削減するための、フードシェアアプリです </a>
+            <%= link_to root_path, class: :logo do %>
+              <%= image_tag "SmartGlutton-logo.png", class: :logo %> <br>
+                <a> SmartGluttonはフードロスを削減するための、フードシェアアプリです</a>
+            <% end %>
           </div>
           <%# ログインしているときは以下を表示するようにしましょう %>
            <% if user_signed_in? %>
              <div class="nav__right">
-               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %>
-               <%= link_to "商品出品", new_item_path, class: :nav__btn %>
+               <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %></li>
+               <li><%= link_to "商品出品", new_item_path, class: :nav__btn %></li>
+                <%= link_to root_path, target: "_blank" do  %>
+                 <li><%= image_tag "カートのアイコン素材 (1).png", class: :cart__logo %></li> 
+                <% end %> 
              </div>
           <%# // ログインしているときは上記を表示するようにしましょう %>
           <%# ログインしていないときは以下を表示するようにしましょう %>
@@ -39,6 +44,10 @@
       </div>
     </header>
     <%= yield %>
+     
+
+
+
     <footer class="footer">
       <p class="copyright">Copyright © SmartGlutton All rights reserved.</p>
         <div class="footer__right">

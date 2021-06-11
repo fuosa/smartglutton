@@ -119,3 +119,30 @@ div.contents.row .success {
 div.contents.row .success h3 {
   margin: 10px auto;
 }
+
+
+
+
+.item_red_btn {
+  text-align: center;
+  background-color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFF;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+  float: right;
+  cursor: pointer;
+
+}
+
+.item-destroy {
+  background-color: lightgray;
+  text-align: center;
+  font-size: 24px;
+  color: black;
+  margin: 20px 0px;
+  padding: 2vh 10vw;
+}
+
+

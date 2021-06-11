@@ -20,8 +20,9 @@
       <span class="item-price"> ¥
         <%= @item.price %>
       </span>
+      <%= link_to "カートに進む", root_path ,class: :item_red_btn %>
     </div>
-      </div> 
+      </div>
     <table class="detail-table">
       <tbody>
         <tr>
@@ -44,15 +45,15 @@
     </table>
       <div class="prototype__comments">
         <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-          <%# <%= form_with model: モデル名,local: true do |f|%>
+          <%= form_with model: @item,local: true do |f|%>
             <div class="field">
-              <%# <%= f.label :hoge, "コメント" %><br />
-              <%# <%= f.text_field :hoge, id:"comment_text" %>
+              <%= f.label :text, "コメント" %><br />
+              <%= f.text_field :text, id:"comment_text" %>
             </div>
             <div class="actions">
-              <%# <%= f.submit "送信する", class: :form__btn  %>
+              <%= f.submit "送信する", class: :form__btn  %>
             </div>
-          <%# <% end %> 
+          <% end %> 
         <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>

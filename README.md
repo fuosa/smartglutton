@@ -67,32 +67,30 @@ has_many: comments
 
 | column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| bill             | integer    | null: false                    |
-| payment_type     | integer    | null: false                    |
-| receive_type     | integer    | null: false                    |
-| phone            | string     | null: false                    |
 | user             | references | null: false, foreign_key: true |
 | item             | references | null: false, foreign_key: true |
 
 ### Association
-has_many: ordered_items
+has_one: ordered_item
 belongs_to: user
+belongs_to: item
 
 
 
 ## ordered_items テーブル
 
-| column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| item         | references | null: false, foreign_key: true |
-| order        | references | null: false, foreign_key: true |
-| item_qty     | integer    | null: false                    |
-| price        | integer    | null: false                    |
-| item_status  | integer    | null: false                    |
+| column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| order            | references | null: false, foreign_key: true |
+| item_qty         | integer    | null: false                    |
+| item_status      | integer    | null: false                    |
+| bill             | integer    | null: false                    |
+| payment_type     | integer    | null: false                    |
+| receive_type     | integer    | null: false                    |
+| phone            | string     | null: false                    |
 
 ### Association
-belongs_to: orders
-belongs_to: items
+belongs_to: order
 
 
 

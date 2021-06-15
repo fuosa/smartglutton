@@ -20,7 +20,7 @@
       <span class="item-price"> ¥
         <%= @item.price %>
       </span>
-      <%= link_to "カートに進む", item_orders_path ,class: :item_red_btn %>
+      <%= link_to "カートに進む", item_orders_path(@item.id) ,class: :item_red_btn %>
     </div>
       </div>
     <table class="detail-table">

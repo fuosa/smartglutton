@@ -1,4 +1,4 @@
-<%# <%= render "shared/second-header"%> %>
+<%# <%= render "shared/second-header"%> 
 
 <div class='transaction-contents'>
   <div class='transaction-main'>
@@ -7,7 +7,7 @@
     </h1>
     <%# 購入内容の表示 %>
     <div class='buy-item-info'>
-      <%# <%= image_tag '#', class: 'buy-item-img' %> %>
+      <%# <%= image_tag @item.image %> %>
       <div class='buy-item-right-content'>
         <h2 class='buy-item-text'>
           <%# <%= @item.item_name %> %>
@@ -31,9 +31,40 @@
     </div>
     <%# /支払額の表示 %>
 
-    <%= form_with model: @purchase_address, url: item_orders_path, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
+    <%= form_with model: @order_info, url: item_orders_path, id: 'charge-form', class: 'transaction-form-wrap',local: true do |f| %>
       <%# <%= render 'shared/error_messages', model: f.object %> %>
-    <%# カード情報の入力 %>
+   
+    
+    <%# 配送先の入力 %>
+    <div class='shipping-address-form'>
+      <h1 class='info-input-haedline'>
+        購入商品
+      </h1>
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">個数</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :item_qty, class:"input-default", id:"item-qty", placeholder:"例）1個", maxlength:"10" %>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">商品状態</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :item_status, class:"input-default", id:"item-status", placeholder:"例）横浜市緑区"%>
+      </div>
+
+      <div class="form-group">
+        <div class='form-text-wrap'>
+          <label class="form-text">支払い方法</label>
+          <span class="indispensable">必須</span>
+        </div>
+        <%= f.text_field :payment_type, class:"input-default", id:"payment-type", placeholder:"例）青山1-1-1"%>
+      </div>
+
+       <%# カード情報の入力 %>
     <div class='credit-card-form'>
       <h1 class='info-input-haedline'>
         クレジットカード情報入力
@@ -72,46 +103,15 @@
       </div>
     </div>
     <%# /カード情報の入力 %>
-    
-    <%# 配送先の入力 %>
-    <div class='shipping-address-form'>
-      <h1 class='info-input-haedline'>
-        配送先入力
-      </h1>
+
       <div class="form-group">
         <div class='form-text-wrap'>
-          <label class="form-text">郵便番号</label>
+          <label class="form-text">受け取り方法</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :post_code, class:"input-default", id:"postal-code", placeholder:"例）123-4567", maxlength:"8" %>
+        <%= f.text_field :receive_type, class:"input-default", id:"receive-type", placeholder:"例）青山1-1-1"%>
       </div>
-      <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">都道府県</label>
-          <span class="indispensable">必須</span>
-        </div>
-        <%# <%= f.collection_select(:prefecture_id, Prefecture.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %> %>
-      </div>
-      <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">市区町村</label>
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_field :city, class:"input-default", id:"city", placeholder:"例）横浜市緑区"%>
-      </div>
-      <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">番地</label>
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.text_field :house_number, class:"input-default", id:"addresses", placeholder:"例）青山1-1-1"%>
-      </div>
-      <div class="form-group">
-        <div class='form-text-wrap'>
-          <label class="form-text">建物名</label>
-          <span class="form-any">任意</span>
-        </div>
-        <%= f.text_field :building_name, class:"input-default", id:"building", placeholder:"例）柳ビル103"%>
+
       </div>
       <div class="form-group">
         <div class='form-text-wrap'>

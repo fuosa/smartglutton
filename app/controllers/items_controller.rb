@@ -3,7 +3,7 @@ class ItemsController < ApplicationController
   before_action :move_to_index, only: [:edit]
 
   def index
-    @items = Item.all
+    @item = Item.all.order(create_at: :desc)
   end
 
   def new
@@ -19,13 +19,10 @@ class ItemsController < ApplicationController
     end
   end
 
-  def destroy
-    item = Item.find(params[:id])
-    item.destroy
+  def show 
   end
 
   def edit
-    @item = Item.find(params[:id])
   end
 
   def update
@@ -33,10 +30,10 @@ class ItemsController < ApplicationController
     item.update(item_params)
   end
 
-  def show 
-    @item = Item.find(params[:id])
+  def destroy
+    item = Item.find(params[:id])
+    item.destroy
   end
-
 
   private 
   def item_params

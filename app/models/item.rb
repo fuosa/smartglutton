@@ -1,5 +1,6 @@
 class Item < ApplicationRecord
-  has_one :order
+  has_many :cart_items
+  has_many :ordered_items
   belongs_to :user
   has_one_attached :image
 

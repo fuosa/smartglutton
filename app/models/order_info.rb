@@ -22,6 +22,6 @@ class OrderInfo
 
   def save 
     order = Order.create(user_id: user_id, item_id: item_id)
-    OrderedItem.create(item_qty: item_qty, payment_type: payment_type, receive_type: receive_type, phone: phone, order_id: order.id)
+    OrderedItem.create(item_qty: item_qty, item_status: item_status, bill: bill, payment_type: payment_type, receive_type: receive_type, phone: phone)
   end
 end

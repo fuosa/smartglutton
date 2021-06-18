@@ -53,7 +53,7 @@
           <label class="form-text">支払い方法</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :payment_type, class:"input-default", id:"payment-type", placeholder:"例）青山1-1-1"%>
+        <%= f.collection_select(:payment_type_id, PaymentType.all, :id, :name, {}, {class:"input-default", id:"item_payment_type"}) %>
       </div>
 
        <%# カード情報の入力 %>
@@ -94,6 +94,7 @@
         <%= f.text_field :cvc,class:"input-default", id:"card-cvc", placeholder:"カード背面4桁もしくは3桁の番号", maxlength:"4" %>
       </div>
     </div>
+
     <%# /カード情報の入力 %>
 
       <div class="form-group">
@@ -101,7 +102,7 @@
           <label class="form-text">受け取り方法</label>
           <span class="indispensable">必須</span>
         </div>
-        <%= f.text_field :receive_type, class:"input-default", id:"receive-type", placeholder:"例）青山1-1-1"%>
+        <%= f.collection_select(:received_type_id, ReceivedType.all, :id, :name, {}, {class:"input-default", id:"item_received_type"}) %>
       </div>
 
       </div>

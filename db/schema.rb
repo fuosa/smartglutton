@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_18_013759) do
+ActiveRecord::Schema.define(version: 2021_06_15_045238) do
 
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2021_06_18_013759) do
 
   create_table "ordered_items", charset: "utf8", force: :cascade do |t|
     t.integer "item_qty", null: false
+    t.integer "item_status", null: false
+    t.integer "bill", null: false
     t.integer "payment_type", null: false
     t.integer "received_type", null: false
     t.string "phone", null: false

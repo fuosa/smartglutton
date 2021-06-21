@@ -83,8 +83,6 @@ belongs_to: item
 | ---------------- | ---------- | ------------------------------ |
 | order            | references | null: false, foreign_key: true |
 | item_qty         | integer    | null: false                    |
-| item_status      | integer    | null: false                    |
-| bill             | integer    | null: false                    |
 | payment_type     | integer    | null: false                    |
 | receive_type     | integer    | null: false                    |
 | phone            | string     | null: false                    |

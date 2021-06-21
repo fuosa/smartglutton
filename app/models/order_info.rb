@@ -4,8 +4,6 @@ class OrderInfo
 
   with_options presence: true do
     validates :item_qty
-    validates :item_status
-    validates :bill
     validates :payment_type
     validates :receive_type
     validates :phone
@@ -13,8 +11,6 @@ class OrderInfo
 
   with_options numericality: {other_than: 0, message: "can't be blank"} do
     validates :item_qty
-    validates :item_status
-    validates :bill
     validates :payment_type
     validates :receive_type
     validates :phone
@@ -22,6 +18,6 @@ class OrderInfo
 
   def save 
     order = Order.create(user_id: user_id, item_id: item_id)
-    OrderedItem.create(item_qty: item_qty, item_status: item_status, bill: bill, payment_type: payment_type, receive_type: receive_type, phone: phone)
+    OrderedItem.create(item_qty: item_qty, payment_type: payment_type, receive_type: receive_type, phone: phone, oreder_id: order.id)
   end
 end

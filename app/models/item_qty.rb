@@ -16,5 +16,6 @@ class ItemQty < ActiveHash::Base
 
 include ActiveHash::Associations
 has_many :ordered_items
+has_many :orders
 
 end

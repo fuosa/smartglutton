@@ -7,6 +7,6 @@ class ReceivedType < ActiveHash::Base
   ]
 
 include ActiveHash::Associations
-has_many :order
+has_many :orders
 
 end

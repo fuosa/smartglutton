@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order_info = OrderInfo.new(order_params)
+    @order_info = OrderInfo.new(order_info_params)
     if @order_info.valid?
       @order_info.save
       redirect_to root_path
@@ -23,8 +23,8 @@ class OrdersController < ApplicationController
 
   private
 
-  def order_params
-      params.require(:order_info).permit(:item_qty, :payment_type, :received_type, :phone).merge(user_id: current_user.id, item_id: params[:item_id])
+  def order_info_params
+      params.require(:order_info).permit(:item_qty_id, :payment_type_id, :received_type_id, :phone).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 
 end

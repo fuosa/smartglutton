@@ -84,7 +84,7 @@ belongs_to: item
 | order            | references | null: false, foreign_key: true |
 | item_qty         | integer    | null: false                    |
 | payment_type     | integer    | null: false                    |
-| receive_type     | integer    | null: false                    |
+| received_type    | integer    | null: false                    |
 | phone            | string     | null: false                    |
 
 ### Association

@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!, except: :index
 
   def index 
+    @order_info = OrderInfo.new
   end
 
   def new 
@@ -14,7 +15,7 @@ class OrdersController < ApplicationController
       @order_info.save
       redirect_to root_path
     else
-      render :new
+      render 'index'
     end
   end
 
@@ -23,7 +24,7 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-      params.require(:order_info).permit(:item_qty, :payment_type, :receive_type, :phone).merge(user_id: current_user.id, item_id: params[:item_id])
+      params.require(:order_info).permit(:item_qty, :payment_type, :received_type, :phone).merge(user_id: current_user.id, item_id: params[:item_id])
   end
 
 end

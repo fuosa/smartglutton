@@ -7,13 +7,14 @@ class OrderInfo
     validates :payment_type_id
     validates :received_type_id
     validates :phone
+    validates :user_id
+    validates :item_id
   end
 
   with_options numericality: {other_than: 0, message: "can't be blank"} do
     validates :item_qty_id
     validates :payment_type_id
     validates :received_type_id
-    validates :phone
   end
 
   def save 

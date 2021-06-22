@@ -8,9 +8,6 @@ class OrdersController < ApplicationController
     @order_info = OrderInfo.new
   end
   
-  def 
-
-
 
 
   def create

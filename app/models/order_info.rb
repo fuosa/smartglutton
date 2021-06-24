@@ -12,7 +12,10 @@ class OrderInfo
     validates :item_id
   end
 
-  
+  def save 
+    order = Order.create(user_id: user_id, item_id: item_id)
 
+    Orderd_item.create(item_qty: item_qty, payment_type: payment_type, received_type: received_type, phone: phone, order_id: order.id)
+  end
 
 end

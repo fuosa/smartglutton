@@ -4,9 +4,9 @@ class Order < ApplicationRecord
   belongs_to :item
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :payment_type_id
-  belongs_to :received_type_id
-  belongs_to :item_qty_id
+  belongs_to :payment_type
+  belongs_to :received_type
+  belongs_to :item_qty
 
 
 end

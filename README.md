@@ -58,7 +58,6 @@
 
 ### Association
 has_many: orders
-has_many: cart_items
 has_many: items
 has_many: comments
 
@@ -92,20 +91,6 @@ belongs_to: order
 
 
 
-## cart_items テーブル
-
-| column    | Type       | Options                        |
-| --------- | ---------- | ------------------------------ |
-| item      | references | null: false, foreign_key: true |
-| user      | references | null: false, foreign_key: true |
-| item_qty  | integer    | null: false                    |
-
-### Association
-belongs_to: users
-belongs_to: items
-
-
-
 ## items テーブル
 
 | column            |  Type      | Options                        |
@@ -118,7 +103,6 @@ belongs_to: items
 | category_status   | integer    | null: false                    |
 
 ### Association
-has_many: cart_items
 has_many: ordered_items
 has_many: comments
 belongs_to: user

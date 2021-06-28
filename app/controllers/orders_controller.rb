@@ -1,5 +1,7 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, except: :index
+  before_action :set_item, only: [:index, :create]
+
 
 
   def index 
@@ -22,7 +24,6 @@ class OrdersController < ApplicationController
     # redirect_to root_path
   end
 
-
   private
 
   def order_params
@@ -32,5 +33,10 @@ class OrdersController < ApplicationController
 
   # def ordered_item_params 
   #   params.permit(:item_qty, :payment_type, :received_type, :phone).merge(order_id: @order.id)
+
+
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
 
 end

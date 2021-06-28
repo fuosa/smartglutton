@@ -10,13 +10,14 @@
   </div>
 
   <div class="field">
-    <%= f.label :category_name, "カテゴリー" %><br />
-    <%= f.text_field :category_name, class: :form__text, id:"item_category_name" %>
+    <%= f.label :category_name_id, "カテゴリー" %><br />
+    <%= f.collection_select(:category_name_id, CategoryName.all, :id, :name, {}, {class:"input-default", id:"category_name_id"}) %>
+
   </div>
 
   <div class="field">
-    <%= f.label :category_status, "商品の状態" %><br />
-    <%= f.text_field :category_status, class: :form__text, id:"item_category_status" %>
+    <%= f.label :category_status_id, "商品の状態" %><br />
+    <%= f.collection_select(:category_status_id, CategoryStatus.all, :id, :name, {}, {class:"input-default", id:"category_status_id"}) %>
   </div>
 
   <div class="field">

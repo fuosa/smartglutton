@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe 'ユーザー新規登録' do
+  
     before do
       @user = FactoryBot.build(:user)
     end
-
-    context 'ユーザー新規登録ができるとき' do
+   
+  
+    describe 'ユーザー新規登録' do
+     context 'ユーザー新規登録ができるとき' do
 
       it '全ての値が正しく入力されていれば登録ができる' do
         expect(@user).to be_valid
@@ -35,9 +37,9 @@ RSpec.describe User, type: :model do
       end
 
       it 'last_nameが全角入力でないと登録できない' do
-        @user.family_name = "ｱｲｳｴｵ"
+        @user.last_name = "ｱｲｳｴｵ"
         @user.valid?
-        expect(@user.errors.full_messages).to include "Family name is invalid"
+        expect(@user.errors.full_messages).to include "Last name is invalid"
       end
 
       it 'first_nameが空だと登録できない' do
@@ -69,7 +71,7 @@ RSpec.describe User, type: :model do
       it 'first_name_kanaが空だと登録できない' do
         @user.first_name_kana = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include "First name kana can't be blank"
+        expect(@user.errors.full_messages).to include "First name kana is invalid"
       end
 
       it 'first_name_kanaが全角カタカナでないと登録できない' do
@@ -112,7 +114,7 @@ RSpec.describe User, type: :model do
       it 'password_confirmationが空だと登録できない' do
         @user.password_confirmation = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include "Password confirmation can't be blank"
+        expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
       end
 
       it 'passwordが5文字以下であると登録できない' do
@@ -140,7 +142,7 @@ RSpec.describe User, type: :model do
         @user.password = 'aaaaaaa'
         @user.password_confirmation = 'aaaaaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include "Password is invalid"
+        expect(@user.errors.full_messages).to include "Password confirmation doesn't match Password"
       end
 
       it 'passwordとpassoword_confirmationが不一致では登録できない' do

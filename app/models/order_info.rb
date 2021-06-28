@@ -4,10 +4,10 @@ class OrderInfo
 
 
   with_options presence: true do 
-    validates :item_qty, numericality: {other_than: 0, message: "can't be blank"}
-    validates :payment_type, numericality: {other_than: 0, message: "can't be blank"}
-    validates :received_type, numericality: {other_than: 0, message: "can't be blank"}
-    validates :phone
+    validates :item_qty, numericality: {other_than: 0 }
+    validates :payment_type, numericality: {other_than: 0 }
+    validates :received_type, numericality: {other_than: 0 }
+    validates :phone, format: { with: /\A[0-9]{10,11}\z/}
     validates :user_id
     validates :item_id
   end

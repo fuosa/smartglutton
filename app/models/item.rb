@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  has_many :orders
+  has_one :orders
   belongs_to :user
   has_one_attached :image
 
@@ -9,8 +9,13 @@ class Item < ApplicationRecord
     validates :description
     validates :category_name
     validates :category_status
-    validates :price
+    validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 9_999_999 }
     validates :image
-    validates :user_id
   end
+
+  with_options numericality: { other_than: 0 } do
+    validates :category_name
+    validates :category_status
+  end
+
 end

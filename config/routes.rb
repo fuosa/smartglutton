@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     resources :orders, only: [:index, :new, :create]
   end
 
-  resources :item do
-    resources :comments, only: :create
+  resources :items do
+  resources :comments, only: [:create]
   end
+
 end

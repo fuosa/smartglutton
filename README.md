@@ -115,7 +115,7 @@ belongs_to: user
 | ----------------- | ---------- | ------------------------------ |
 | item              | references | null: false, foreign_key: true |
 | user              | references | null: false, foreign_key: true |
-
+| comment           | text       |                                |
 ### Association
 belongs_to: item
 belongs_to: user

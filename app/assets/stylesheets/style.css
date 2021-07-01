@@ -112,12 +112,15 @@ a {
   display: flex;
 }
 
-.side-bar {
-  background-color: #253141;
-  width: 300px;
-  height: 100vh;
-}
-
+.side_bar_container
+{
+  width:250px;
+  min-height:500px;
+  height:auto;
+  background-color:#009b9f;
+  float:left;
+  margin-top:10px;
+  }
 
 /* フォーム周り */
 .form__wrapper{
@@ -171,6 +174,8 @@ a {
 .shipping-address-form {
   margin-top: 15px;
 }
+
+
 
 /* メイン */
 

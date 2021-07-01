@@ -1,4 +1,7 @@
 <main class="main">
+      <aside class="side_bar_container">
+       サイドバー１
+      </aside>
   <div class="inner">
     <%# ログインしているときは以下を表示する %>
     <% if user_signed_in? %>
@@ -13,4 +16,5 @@
       <%= render partial: "item", collection: @items %>
     </div>
   </div>
+
 </main>

@@ -1,7 +1,7 @@
 /* 商品の概要 */
 
 .prototype__wrapper{
-  min-height: calc(100vh - 161px);
+  min-height: calc(80vh - 161px);
 }
 .prototype__hedding{
   font-size: 24px;

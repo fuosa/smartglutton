@@ -56,7 +56,8 @@
             <div id= 'comments'>
              <% @comments.reverse_each do |comment| %>
               <div class="comment">
-                <p><%= comment.text %></p>
+                <p><%= comment.text %></p> 
+                    <a href="/users/#{comment.user_id}"><%= "・#{comment.user.nickname}" %></a>
               </div>
               <% end %> 
             </div>
@@ -64,10 +65,10 @@
         <%# // ログインしているユーザーには上記を表示する %>
         <%# <ul class="comments_lists"> %>
           <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-            <%# <li class="comments_list">
-              <%= " コメントのテキスト "
-              <%= link_to "（ ユーザー名 ）", comments_path , class: :comment_user
-            </li> %>
+            <%# <li class="comments_list"> %>
+              <%# <%= @comments.text %> %>
+              <%# <%= link_to "#{current_user.nickname}", @comments_path , class: :comment_user %> %>
+            </li> 
           <%# // 投稿に紐づくコメントを一覧する処理を記述する %>
         </ul>
       </div>

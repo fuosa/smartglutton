@@ -37,6 +37,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @comment = Comment.new
     @comments = @item.comments.order(created_at: :desc)
+    @comments = @item.comments.includes(:user).all
+
   end
 
 

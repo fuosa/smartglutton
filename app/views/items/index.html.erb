@@ -1,7 +1,16 @@
 <main class="main">
-      <aside class="side_bar_container">
-       サイドバー１
-      </aside>
+      <div class="side_bar_content">
+       <aside>
+        <h2>サイドバー１</h2>
+          <div class="sid_bar_section">
+            <ul>
+             <li><a href="">リスト</a></li>
+             <li><a href="">リスト</a></li>
+             <li><a href="">リスト</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
   <div class="inner">
     <%# ログインしているときは以下を表示する %>
     <% if user_signed_in? %>

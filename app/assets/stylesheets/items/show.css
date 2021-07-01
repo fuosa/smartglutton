@@ -235,22 +235,6 @@ div.contents.row .success h3 {
   text-align: right;
 }
 
-/* サイドバー */
-
-.sidebar-container{
-  background: #8BF28C;
-  height: 100%;
-  text-align: center;
-  color: #fff;
-  width: 300px;
-  float: left;
-}
-.sidebar{
-  width: 270px;
-  height: 150px;
-  background: #8BB2F2;
-  margin: 15px auto;
-}
-.sidebar-title{
-  color: #fff;
+.main{
+  display:flex;
 }

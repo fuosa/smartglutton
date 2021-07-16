@@ -11,7 +11,7 @@ h1,
 h2,
 p,
 div {
-  margin: 0;
+  margin: auto;
   padding: 0;
 }
 
@@ -26,6 +26,7 @@ li {
 
 img {
   max-width: 100%;
+  max-height: 100%;
   vertical-align: bottom;
   overflow: auto;
 
@@ -313,6 +314,7 @@ a {
 /* 支払額の表示 */
 .item-payment {
   height: 120px;
+  width: 170px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -328,12 +330,14 @@ a {
   font-size: 25px;
 }
 
+
 /* /支払額の表示 */
 
 
 /* 商品購入ボタン */
 .buy-btn {
-  width: 50%;
+  width: 60%;
+  text-align: center;
   margin: 0 auto;
   margin-top: 50px;
 }

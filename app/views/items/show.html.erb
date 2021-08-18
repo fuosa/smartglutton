@@ -1,19 +1,19 @@
 <main class="main">
   <div class="inner">
-    <div class="prototype__wrapper">
-      <p class="prototype__hedding">
+    <div class="smaglu__wrapper">
+      <p class="smaglu__hedding">
         <%= @item.item_name%>
       </p>
-      <%= link_to "by #{@item.user.nickname}さん", user_path(@item.user), class: :prototype__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
+      <%= link_to "by #{@item.user.nickname}さん", user_path(@item.user), class: :smaglu__user %>
+      <%# 投稿者とログインしているユーザーが同じであれば以下を表示する %>
         <% if user_signed_in? && current_user.id == @item.user_id %>
-        <div class="prototype__manage">
-          <%= link_to "編集する", edit_item_path(@item.id), class: :prototype__btn %>
-          <%= link_to "削除する", item_path(@item.id), method: :delete, class: :prototype__btn %>
+        <div class="smaglu__manage">
+          <%= link_to "編集する", edit_item_path(@item.id), class: :smaglu__btn %>
+          <%= link_to "削除する", item_path(@item.id), method: :delete, class: :smaglu__btn %>
         </div>
         <% end %>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
-      <div class="prototype__image">
+      <%# // 投稿者とログインしているユーザーが同じであれば上記を表示する %>
+      <div class="smaglu__image">
         <%= image_tag @item.image %>
       </div>
       <div class="item-price-box">

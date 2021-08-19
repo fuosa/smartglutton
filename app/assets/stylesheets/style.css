@@ -113,16 +113,7 @@ a {
   display: flex;
 }
 
-.side_bar_content
-{
-  width:250px;
-  min-height:500px;
-  height:auto;
-  background-color:#009b9f;
-  float:left;
-  margin-top:10px;
-  position: sticky
-  }
+
 
 /* フォーム周り */
 .form__wrapper{

@@ -1,0 +1,17 @@
+.side_bar_content
+{
+  width:250px;
+  min-height:500px;
+  height:auto;
+  background-color:#009b9f;
+  float:left;
+  margin-top:10px;
+  position: sticky
+  }
+
+  .side_title{
+    font-size: 1.375rem;
+    padding: 0 8px 8px;
+    border-bottom: 2px #0bd solid;
+    font-weight: normal;
+  }
